@@ -1,7 +1,11 @@
 # Automatic-AI-Creator
 
-// still developing 
+##  under construction :)
 
-for now still working on the :
-* CNN 
-* flask interface
+
+for now still developing the beta version and adding the folling features:
+* tkinter interface
+* AI that creates CNN models
+* flask web interface for the deployment of AI on a local data
+
+any contributions or suggestions are welcome 
