@@ -61,7 +61,7 @@ def train(parent):
 
 window = Tk()
 window.geometry("860x500")
-
+window.title("Automatic-AI-Creator")
 
 parent = ''
 
