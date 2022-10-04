@@ -1,18 +1,15 @@
 from flask import Flask, render_template, request
 from scipy.misc import imsave, imread, imresize
 import numpy as np
-# import keras.models
 import re
 import sys 
 import os
 import base64
-sys.path.append(os.path.abspath("./model"))
-# from load import * 
+# sys.path.append(os.path.abspath("./model"))
 
 
 global graph, model
 
-# model, graph = init()
 
 app = Flask(__name__)
 
@@ -21,8 +18,8 @@ app = Flask(__name__)
 def index_view():
     return render_template('index.html')
 
-def convertImage(imgData1):
-	imgstr = re.search(b'base64,(.*)',imgData1).group(1)
+def convertImage(imgData):
+	imgstr = re.search(b'base64,(.*)',imgData).group(1)
 	with open('output.png','wb') as output:
 	    output.write(base64.b64decode(imgstr))
 
