@@ -52,10 +52,9 @@ def train(parent):
     model.compile(optimizer=tf.optimizers.Adam(learning_rate=0.00008),
                 loss="binary_crossentropy",
                 metrics=["accuracy"])
-    print("started training")
-    print(model.fit(train_generator, epochs=10,
+    history = model.fit(train_generator, epochs=10,
                         batch_size=5,
-                        validation_data=validation_generator))
+                        validation_data=validation_generator)
     
     model.save("model.h5")
 
@@ -72,12 +71,16 @@ def input_function():
     global var
     parent = filedialog.askdirectory()
     text.set(f"folder : {parent} ")
+    
 
 
 def extraction():
     global parent
     print(parent)
     train(parent)
+    text2.set("model status = trained")
+    text3.set("accuracy = \n{parse value from history} ")
+    text4.set("model is saved successfully")
 
 
 
