@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 # from scipy.misc import save_img, imread, imresize
+from PIL import Image
 import numpy as np
 import re
 import sys
@@ -28,9 +29,9 @@ def convertImage(imgData):
 def predict():
 	imgData = request.get_data()
 	convertImage(imgData)
-	x = imread('output.png', mode='L')
+	x = Image.open('output.png')
 	x = np.invert(x)
-	x = imresize(x, (224, 224))
+	x = x.resize((224,224), Image.ANTIALIAS)  
 	x = x.reshape(1, 224, 224, 3)
 
 	with graph.as_default():
