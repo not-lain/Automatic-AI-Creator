@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request
-from scipy.misc import save_img, imread, imresize
+# from scipy.misc import save_img, imread, imresize
 import numpy as np
 import re
 import sys
 import os
 import base64
-# sys.path.append(os.path.abspath("./model"))
 
 
 global graph, model
