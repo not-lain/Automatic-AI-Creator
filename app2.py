@@ -30,6 +30,7 @@ def predict():
 	imgData = request.get_data()
 	convertImage(imgData)
 	x = Image.open('output.png')
+	return "imported image successfully"
 	x = np.invert(x)
 	x = x.resize((224,224), Image.ANTIALIAS)  
 	x = x.reshape(1, 224, 224, 3)
