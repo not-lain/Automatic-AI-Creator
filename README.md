@@ -13,5 +13,3 @@ TO DO:
 * cry in the corner
 
 any contributions or suggestions are welcome 
-
-> PLEASE COLLABORATE WITH ME !!! (totally not crying)
